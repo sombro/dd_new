@@ -1,0 +1,168 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	min-width: 768px;
+	min-height: 345px;	
+}
+.loader{
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background: white;
+	position: fixed;
+	top:0;
+	left:0;
+}
+@blue: #2F03A1;
+@green: #00BD93;
+@red: #BA0029;
+@yellow: #FFFB12;
+@project_block_width: 33.33%;
+@dd_green: #24d38d;
+/*@media screen and (max-width:767px){
+	@project_block_width: 50%;
+}*/
+.menu{
+	position: fixed;
+	z-index: 500;
+	left:0;
+	top:0;
+	color: white;
+	background: rgba(74,74,74,.8);
+	width: 10%;
+	height: 100%;
+	box-shadow: 2px -1px 5px rgba(0, 0, 0, 0.25);
+}
+.logo{
+	width: 80%;
+	text-align: center;
+	padding: 10%;
+}
+@transition_duration_fast: .1s;
+.menu li{
+	cursor: pointer;
+	padding: 10%;
+	-webkit-transition: background @transition_duration_fast ease-out;
+    -moz-transition: background @transition_duration_fast ease-out;
+    -o-transition: background @transition_duration_fast ease-out;
+    transition: background @transition_duration_fast ease-out;
+}
+.menu li:hover{
+	background: @dd_green;
+}
+.screen{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 1;
+}
+.screen.active{
+	z-index: 10;
+}
+.blue{
+	background: @blue;
+}
+.green{
+	background: @green;
+}
+.red{
+	background: @red;
+}
+.yellow{
+	background: @yellow;
+}
+.portfolio{
+	overflow-y:auto;
+	background: white;
+}
+.projects{
+	width: 90%;
+	left:10%;
+	position: absolute;
+}
+.project_block{
+	min-width: 345px;
+	min-height: 345px;
+	width: @project_block_width;
+	float: left;
+	position: relative;
+	cursor: pointer;
+}
+.project_block .background{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 1;
+}
+@transition_duration: .5s;
+.project_block .darker{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	opacity: 0;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 2;
+	-webkit-transition: opacity @transition_duration ease-out;
+    -moz-transition: opacity @transition_duration ease-out;
+    -o-transition: opacity @transition_duration ease-out;
+    transition: opacity @transition_duration ease-out;
+}
+.projects:hover .darker{
+	opacity: 1;
+}
+.projects .project_block:hover .darker{
+	opacity: 0;
+}
+.project_about{
+	height: 100%;
+	width: 90%;
+	position: fixed;
+	left:100%;
+	top:0;
+	display: none;
+	background: rgba(255,255,255,1);
+	z-index: 20;
+}
+.project_about_block{
+	display: none;
+	background: @dd_green;
+}
+.project_block .trailer{
+	width: 100%;
+	height: 30%;
+	position: absolute;
+	top:70%;
+	left:0;
+	z-index: 5;
+	opacity: 0;
+	background: @dd_green;
+	box-shadow: 2px -1px 5px rgba(0, 0, 0, 0.25);
+	-webkit-transition: opacity @transition_duration ease-out;
+    -moz-transition: opacity @transition_duration ease-out;
+    -o-transition: opacity @transition_duration ease-out;
+    transition: opacity @transition_duration ease-out;
+}
+.trailer .project_name{
+	color: white;
+	font-size: 24px;
+	text-align: left;
+	margin:10px 20px 0 10px;
+	line-height: 1.2;
+}
+.trailer .project_type{
+	color: white;
+	font-size: 16px;
+	text-align: left;
+	margin:10px 0 0 10px;
+}
+.project_block:hover .trailer{
+	opacity: 1;
+}
